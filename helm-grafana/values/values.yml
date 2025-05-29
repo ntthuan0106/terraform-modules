@@ -1,0 +1,18 @@
+grafana:
+  enable: true
+
+  service:
+    type: LoadBalancer
+
+  grafana.ini:
+    smtp:
+      enabled: true
+      host: smtp.gmail.com:465
+      certfile:
+      keyfile:
+      from_address: ntthuan0106.alert@gmail.com
+      startTLS_policy: "NoStartTLS"
+  smtp:
+    existingSecret: "grafana-smtp-secret"
+    userKey: "user"
+    passwordKey: "password"
